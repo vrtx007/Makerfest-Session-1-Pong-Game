@@ -109,13 +109,14 @@ void loop()
     // Wall collisions
     if (ball.X <= ball.size || ball.X >= SCREEN_WIDTH - ball.size) ball.speedX = -ball.speedX;
     if (ball.Y <= ball.size) ball.speedY = -ball.speedY;
-    
+    //Paddle Collision
     if (ball.Y + ball.size >= paddle.Y && ball.X > paddle.X && ball.X < paddle.X + paddle.width) {
         ball.speedY = -ball.speedY;
     }
+    //Paddle missed
     if (ball.Y > SCREEN_HEIGHT)
         reset_game();
- 
+    
     ball.update();
     paddle.update();
     delay(15);
