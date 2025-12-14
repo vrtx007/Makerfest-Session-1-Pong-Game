@@ -19,7 +19,7 @@ class Ball
     float X, Y, speedX, speedY;
     int color, size;
 
-    Ball(float x=0, float y=SCREEN_HEIGHT/2, float s_x=2, float s_y=0, int sz=6, int c = ILI9341_CYAN)
+    Ball(float x=0, float y=SCREEN_HEIGHT/2, float s_x=2, float s_y=0, int sz=6, int c = ILI9341_RED)
     {
         X = x;
         Y = y;

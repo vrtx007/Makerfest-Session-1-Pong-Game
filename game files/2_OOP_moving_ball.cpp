@@ -15,7 +15,7 @@ class Ball
     float X, Y, speedX, speedY;
     int color, size;
 
-    Ball(float x=0, float y=SCREEN_HEIGHT/2, float s_x=2, float s_y=0, int sz=6, int c = ILI9341_CYAN)
+    Ball(float x=0, float y=SCREEN_HEIGHT/2, float s_x=2, float s_y=0, int sz=6, int c = ILI9341_RED)
     {
         X = x;
         Y = y;
@@ -44,7 +44,9 @@ class Ball
     }
 };
 
-Ball ball(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 5, 5, 7);
+
+Ball ball1;
+Ball ball2(SCREEN_WIDTH, SCREEN_HEIGHT, -0.5, -0.5, 7, ILI9341_DARKGREEN);
 
 
 void setup()
@@ -56,9 +58,7 @@ void setup()
 
 void loop()
 {
-    // Wall collisions
-    if (ball.X <= ball.size || ball.X >= SCREEN_WIDTH - ball.size) ball.speedX = -ball.speedX;
-    if (ball.Y <= ball.size || ball.Y >= SCREEN_HEIGHT - ball.size) ball.speedY = -ball.speedY;
-    ball.update();
+    ball1.update();
+    ball2.update();
     delay(15);
 }
